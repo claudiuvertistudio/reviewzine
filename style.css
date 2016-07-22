@@ -1,0 +1,542 @@
+/*
+ Theme Name:   ReviewZine
+ Theme URI:    
+ Description:  
+ Author:       MachoThemes
+ Author URI:   https://machothemes.com
+ Template:     islemag
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  reviewzine
+*/
+ /* Hover color: #ffa71c; */
+
+body,
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
+.main-navigation li a,
+#footer {
+	font-family: "Nunito";
+}
+.sidebar .widget h3 {
+	font-family: "Hind";
+	font-weight: 600;
+}
+#footer .widget h3 {
+	font-family: "Hind";
+	font-weight: 400;
+}
+
+ /* Hover */
+ #footer.footer-inverse a:hover, 
+ #footer.footer-inverse .widget .tweet_time a:hover,
+ .main-navigation .current_page_item > a, 
+ .main-navigation .current-menu-item > a, 
+ .main-navigation .current_page_ancestor > a,
+ .social-icons a:hover > i, 
+ ul > li:hover > a, 
+ .top-navigation ul > li:hover > a, 
+ .main-navigation ul > li:hover > a, 
+ .sidebar .widget li:hover a {
+ 	color: #ffa71c !important;
+ }
+ a {
+ 	color: #ffa71c;
+ }
+ #header-search-form:before {
+ 	border-color: #ffa71c transparent;
+ }
+ button, 
+ input[type="button"], 
+ input[type="reset"], 
+ input[type="submit"],
+ .navbar-btn:hover {
+ 	background-color: #ffa71c;
+ }
+ button, 
+ input[type="button"], 
+ input[type="reset"], 
+ input[type="submit"] {
+  	border-color: #ffa71c;
+ }
+
+ button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {
+ 	background-color: #1e3046;
+ 	border-color: #1e3046;
+ }
+
+ h1,h2,h3,h4,h5,h6 {
+ 	color: #1e3046;
+ }
+
+.islemag-top-container .entry-block {
+	max-height: none;
+}
+.islemag-top-container .entry-block .entry-holder {
+	position: relative;
+	max-height: 400px;
+}
+.navbar-top {
+    background: #1e3046;
+    border-bottom: 0 none;
+}
+.navbar-top .container {
+	position: relative;
+}
+.top-navigation ul li a,
+.navbar-btn,
+.navbar-top .social-icons a i, 
+.navbar-top .social-icons a {
+	color: #fff;
+	font-weight: normal;
+}
+.navbar-top .social-icon:after {
+	display: none;
+}
+.navbar-top .social-icons a {
+	padding-right: 10px;
+}
+.navbar-top .social-icons:last-child a {
+	padding-right: 0;
+}
+
+/* Navigation */
+div#navbar {
+    border-bottom: 1px solid #e1e1e1;
+    border-top: 1px solid #e1e1e1;
+    margin-bottom: 30px;
+    width: 100%;
+}
+.main-navigation {
+	border: 0 none;
+}
+.main-navigation .nav-menu > li  > a {
+	border: 0 none;
+}
+.main-navigation li a {
+	text-transform: none;
+	position: relative;
+	color: #1e3046;
+}
+.main-navigation li:hover a:before,
+.main-navigation li.current_page_item a:before {
+    content: "";
+    width: calc( 80% - 36px );
+    height: 5px;
+    background: #ffa71c;
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/*.main-navigation li:first-child a {
+	padding-left: 0;
+}
+.main-navigation li:last-child a {
+	padding-right: 0;
+}*/
+
+/* Homepage Slider */
+.entry-overlay.entry-block .entry-overlay-meta, 
+.entry-overlay.entry-block:hover .entry-overlay-meta {
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 90%, rgba(0,0,0,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(90%,rgba(0,0,0,1)), color-stop(100%,rgba(0,0,0,1)));
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 90%,rgba(0,0,0,1) 100%);
+    background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 90%,rgba(0,0,0,1) 100%);
+    background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 90%,rgba(0,0,0,1) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 90%,rgba(0,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+}
+.star-ratings-css .star-ratings-css-top {
+	text-shadow: 0 0 0;
+	color: #ffc514;
+}
+.star-ratings-css-bottom {
+	color: #ffc514;
+}
+.extra-info .entry-title {
+	margin-bottom: 0;
+	color: #1e3046;
+}
+
+/* Footer */
+div#footer-inner {
+    background: #1e3046;
+}
+.footer-inverse #footer-bottom.no-bg {
+    background: #172435;
+    border: 0 none;
+    padding: 10px 0;
+}
+#footer.footer-inverse a,
+#footer.footer-inverse {
+	color: #fff;
+	font-weight: 400;
+}
+
+/* FrontPage Sections */
+.title-border {
+	border-left: 0 none;
+}
+.title-border span {
+	padding-left: 0;
+}
+.owl-prev, .owl-next {
+	background: #1e3046;
+	color: #fff;
+}
+.title-bg-line:after {
+    height: 3px;
+    border-bottom: 1px solid #eaeaea;
+    background: transparent;
+    border-top: 1px solid #eaeaea;
+}
+
+.star-ratings-css {
+	width: auto;
+}
+.star-ratings-css .star-ratings-css-top {
+	height: 14px;
+}
+.entry-block .entry-title a {
+	color: #1e3046;
+}
+
+/* Template 2 */
+.entry-block.eb-small .entry-title {
+	margin-top: -3px;
+}
+.islemag-template2 .entry-block.eb-small .entry-meta {
+	margin-top: 10px;
+}
+.entry-block .entry-title a {
+	font-size: 18px;
+}
+.islemag-top-container .entry-block .entry-title a {
+	font-size: 22px;
+}
+
+/* Sidebar */
+.title-border.title-bg.dkgreen, .title-bg-line.dkgreen:after, 
+.title-underblock.dkgreen:after, .dkgreen .category-block {
+	background-color: transparent;
+}
+.footer-menu li:after {
+	display: none;
+}
+.footer-menu li {
+	margin: 0 0 0 10px;
+}
+.widget-title {
+	color: #fff;
+}
+#footer .widget h3:after {
+	display: none;
+}
+
+/* Category Page */
+.page-header {
+	border-bottom: 0 none;
+	padding: 0;
+    margin-bottom: 35px;
+}
+.category .page-header h1, .search .page-header h1 {
+	margin-bottom: 0;
+}
+.category .page-header h1 span.category-name {
+	color: #ffa71c;
+	border-left : 3px solid #ffa71c;
+	display: inline-block;
+	padding-left: 15px;
+	margin-left: 15px;
+}
+.category .page-header h1 span {
+	display: inline-block;
+    background: #fff;
+    padding-right: 10px;
+    position: relative;
+}
+.category .page-header h1 {
+	position: relative;
+}
+.category .page-header h1:before {
+    height: 3px;
+    width: 100%;
+    border-bottom: 1px solid #eaeaea;
+    background: transparent;
+    border-top: 1px solid #eaeaea;
+    content: '';
+    display: block;
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: 0;
+}
+.entry-date > div {
+	background-color: #ffa71c;
+	color: #fff;
+	padding-bottom: 18px;
+	padding-top: 18px;
+	font-size: 25px;
+	font-weight: bold;
+}
+.entry-date {
+	padding-top: 0;
+	padding-bottom: 10px;
+	background: #fff;
+	border-bottom: 1px solid #ffa71c;
+}
+.entry-date span {
+	margin-top: 0;
+	background: transparent;
+	color: #fff;
+	text-transform: capitalize;
+	font-size: 15px;
+	font-weight: normal;
+	display: block;
+}
+.entry:after {
+	background-color: #ffa71c;
+}
+.post header.entry-header {
+	padding: 20px 0;
+	border-top: 1px solid #eaeaea;
+}
+.post header.entry-header a{
+	color: #333333;
+	font-size: 15px;
+}
+.post header.entry-header a i {
+	display: inline-block;
+	margin-right: 5px;
+}
+
+/* Single */
+#review-statistics .review-wrap-up div.cwpr-review-top {
+	border-top: 1px solid #eaeaea !important;
+}
+#review-statistics .review-wrap-up .cwpr-review-top h2.cwp-item {
+	font-size: 18px;
+}
+#review-statistics .review-wrap-up .cwpr-review-top .cwp-item-price {
+	font-size: 20px;
+	color: #ffa71c;
+}
+#review-statistics .review-wrap-up .cwpr-review-top .cwp-item-price > span > span:first-child {
+	vertical-align: super;
+    font-size: 12px;
+}
+.blog-related-carousel.owl-carousel .owl-item {
+	border: 0 none;
+}
+
+h3.blog-related-carousel-title,
+h3#reply-title,
+#comments .comments-title {
+	position: relative;
+	line-height: 30px;
+	padding: 0;
+	font-size: 30px;
+	font-family: "Hind";
+}
+h3.blog-related-carousel-title:after,
+h3#reply-title:after,
+#comments .comments-title:after {
+    height: 3px;
+    border-bottom: 1px solid #eaeaea;
+    background: transparent;
+    border-top: 1px solid #eaeaea;
+   	content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    margin-top: -1.5px;
+    width: 100%;
+}
+h3.blog-related-carousel-title span,
+h3#reply-title span,
+#comments .comments-title span {
+	background-color: #fff;
+	display: inline-block;
+	padding-right: 10px;
+	position: relative;
+    z-index: 2;
+}
+.blog-related-carousel .owl-nav {
+	padding-left: 10px;
+	background-color: #fff;
+}
+.about-author h3 {
+	clear: none;
+	font-weight: normal;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+.about-author h3:after {
+	display: none;
+}
+.about-author figure {
+	margin-right: 20px;
+}
+.about-author .title-underblock a {
+	color: #ffa71c;
+}
+.about-author .title-underblock span {
+	margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid #080d0f;
+    line-height: 18px;
+    display: inline-block;
+    color: #080d0f;
+}
+.comment-form input[type="submit"].btn {
+	background-color: #ffa71c;
+	border-color: #ffa71c;
+	color: #fff;
+}
+.comment-body {
+	border: 1px solid #e1e1e1;
+	padding: 30px 20px;
+}
+.comments-list .comment-date {
+    color: #8d8d8d;
+    margin-left: 0;
+    font-size: 13px;
+    font-family: "Nunito";
+    font-weight: 400;
+}
+.comments-list figure.author-avatar {
+    float: left;
+    margin-right: 20px;
+}
+.comments-list .media-heading {
+	padding-left: 0;
+	font-family: "Nunito";
+    font-size: 15px;
+}
+.comments-list .media-body,
+.comments-list .media-heading {
+	color: #1e3046;
+}
+.comments-list .media-body {
+	padding-left: 0;
+	padding-top: 15px;
+}
+.reply-link a {
+	color: #ffa71c;
+	font-weight: 400;
+	font-size: 15px;
+	text-decoration: underline;
+}
+.comments-list {
+	margin-bottom: 60px;
+}
+.comment .children {
+	margin-left: 0;
+	padding-left: 30px;
+	border-left: 1px solid #ffa71c;
+}
+.widget_search .navbar-form {
+	padding: 0;
+}
+
+/* Other CSS */
+.navbar-top .social-icons {
+	padding-left: 15px;
+}
+.islemag-ad-banner-content {
+	text-align: right;
+	padding-right: 15px;
+}
+blockquote {
+	border-left-color: #ffa71c;
+}
+blockquote:after {
+	background-color: #ffa71c;
+}
+.blog .entry-media figure, .archive .entry-media figure, .search .entry-media figure {
+	background-color: transparent;
+}
+.islemag-content-right .tagcloud a {
+	background-color: transparent;
+	border: 1px solid #e1e1e1;
+}
+.islemag-content-right .tagcloud a {
+	color: #6f6f6f !important;
+}
+.islemag-content-right .tagcloud a:hover {
+	background-color: #1e3046;
+	border-color: #1e3046;
+	color: #fff !important;
+}
+#footer.footer-inverse .tagcloud a {
+	border: 1px solid #fff;
+	background-color: transparent;
+	color: #fff !important;
+}
+#footer.footer-inverse .tagcloud a:hover {
+	background-color: #fff;
+	color: #1e3046 !important;
+}
+#wp-calendar caption {
+    background: #1e3046;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+}
+#wp-calendar thead th {
+	padding-top: 20px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+#wp-calendar tbody td:not(.pad) {
+	text-align: center;
+	border: 4px solid #fff;
+	background-color: #f1f1f1;
+	color: #080d0f;
+	padding: 10px 0;
+	font-family: "Nunito";
+}
+div#calendar_wrap {
+    padding: 5px;
+    border: 1px solid #e6e6e6;
+}
+#wp-calendar tbody td a {
+	color: #ffa71c;
+}
+table#wp-calendar {
+    margin-bottom: 0;
+}
+.post .entry-content h1,
+.post .entry-content h2,
+.post .entry-content h3,
+.post .entry-content h4,
+.post .entry-content h5,
+.post .entry-content h6 {
+	font-family: "Hind";
+	font-weight: 500;
+}
+.post .entry-content h1 {
+	font-size: 36px;
+}
+.post .entry-content h2 {
+	font-size: 30px;
+}
+.post .entry-content h3 {
+	font-size: 27px;
+}
+.post .entry-content h4 {
+	font-size: 25px;
+}
+.post .entry-content h5 {
+	font-size: 20px;
+}
+.post .entry-content h6 {
+	font-size: 18px;
+}
