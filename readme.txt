@@ -48,7 +48,7 @@ The exceptions to this license are as follows:
 * Images
 
 	License:
-    All mystock.photos images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/
+    All pixabay.com images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/
 
 	Images from screenshot:
 
