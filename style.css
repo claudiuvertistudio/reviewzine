@@ -13,11 +13,8 @@
 */
  /* Hover color: #ffa71c; */
 
-body,
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
-.main-navigation li a,
-#footer {
-	/*font-family: "Nunito";*/
+body {
+	font-family: "Raleway";
 }
 .sidebar .widget h3 {
 	font-family: "Hind";
@@ -43,6 +40,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
  }
  a {
  	color: #ffa71c;
+ }
+ a:hover {
+ 	color: #1e3046;
  }
  #header-search-form:before {
  	border-color: #ffa71c transparent;
@@ -607,6 +607,9 @@ table#wp-calendar #next {
 .entry-content ul ul {
 	margin-left: 10px;
 }
+.entry-content ol {
+    margin-left: 16px;
+}
 
 .entry-content ul li:before {
 	content: "•";
@@ -631,6 +634,20 @@ blockquote:after {
 .widget_search button:hover {
 	background-color: #ffa71c;
 	border-color: #ffa71c;
+}
+
+/* Tables */
+
+.entry-content table {
+    border: 1px solid #eaeaea;
+}
+.entry-content table tr {
+	border-bottom: 1px solid #eaeaea;
+}
+.entry-content table tr th,
+.entry-content table tr td {
+	padding: 10px;
+	border-left: 1px solid #eaeaea;
 }
 
 /* Categories */
@@ -686,7 +703,7 @@ blockquote:after {
 }
 
 /* Drop Caps */
-.single .entry-content p:first-child:first-letter { 
+.single .entry-content > p:first-child:first-letter { 
 	float: left; 
 	font-size: 50px; 
 	line-height: 52px; 

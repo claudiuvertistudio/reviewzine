@@ -7,13 +7,13 @@ function reviewzine_fonts_url() {
 	* supported by Lora, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$nunito = _x( 'on', 'Nunito font: on or off', 'reviewzine' );
+	$raleway = _x( 'on','Raleway font: on or off','reviewzine' );
 	$hind = _x( 'on','Hind font: on or off', 'reviewzine' );
 
-	if( 'off' !== $nunito || 'off' !== $hind ){
+	if( 'off' !== $raleway || 'off' !== $hind ){
 		$font_families = array();
-		if( 'off' !== $nunito ){
-			$font_families[] = 'Nunito:300,400,700';
+		if( 'off' !== $raleway ){
+			$font_families[] = 'Raleway:400,500,600,700';
 		}
 		if( 'off' !== $hind ){
 			$font_families[] = 'Hind:400,600,700';
@@ -27,6 +27,16 @@ function reviewzine_fonts_url() {
 
 	return $fonts_url;
 }
+
+function reviewzine_add_editor_styles() {
+    add_editor_style( reviewzine_fonts_url() );
+}
+add_action( 'after_setup_theme', 'reviewzine_add_editor_styles' );
+
+function reviewzine_admin_add_editor_styles() {
+    add_editor_style( 'css/editor_style.css' );
+}
+add_action( 'admin_init', 'reviewzine_admin_add_editor_styles' );
 
 function reviewzine_scripts_styles() {
 	wp_dequeue_style( 'islemag-fonts' );
