@@ -17,7 +17,7 @@ body,
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
 .main-navigation li a,
 #footer {
-	font-family: "Nunito";
+	/*font-family: "Nunito";*/
 }
 .sidebar .widget h3 {
 	font-family: "Hind";
@@ -39,7 +39,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
  .top-navigation ul > li:hover > a, 
  .main-navigation ul > li:hover > a, 
  .sidebar .widget li:hover a {
- 	color: #ffa71c !important;
+ 	color: #ffa71c;
  }
  a {
  	color: #ffa71c;
@@ -119,8 +119,8 @@ div#navbar {
 	position: relative;
 	color: #1e3046;
 }
-.main-navigation li:hover a:before,
-.main-navigation li.current_page_item a:before {
+.main-navigation li:hover > a:before,
+.main-navigation li.current_page_item > a:before {
     content: "";
     width: calc( 80% - 36px );
     height: 5px;
@@ -129,6 +129,9 @@ div#navbar {
     top: -3px;
     left: 50%;
     transform: translateX(-50%);
+}
+.main-navigation li .sub-menu a:before {
+	display: none !important;
 }
 /*.main-navigation li:first-child a {
 	padding-left: 0;
@@ -290,7 +293,7 @@ div#footer-inner {
 	border-bottom: 1px solid #ffa71c;
 }
 .entry-date span {
-	margin-top: 0;
+	margin-top: 10px;
 	background: transparent;
 	color: #fff;
 	text-transform: capitalize;
@@ -299,7 +302,12 @@ div#footer-inner {
 	display: block;
 }
 .entry:after {
-	background-color: #ffa71c;
+	background-color: transparent;
+	width: 3px;
+	height: 100%;
+	max-height: 198px;
+	background-image: url( 'images/date-line.png' );
+	top: 97px;
 }
 .post header.entry-header {
 	padding: 20px 0;
@@ -372,6 +380,9 @@ h3#reply-title span,
 	padding-left: 10px;
 	background-color: #fff;
 }
+.about-author {
+	margin-top: 50px;
+}
 .about-author h3 {
 	clear: none;
 	font-weight: normal;
@@ -383,6 +394,9 @@ h3#reply-title span,
 }
 .about-author figure {
 	margin-right: 20px;
+}
+.about-author figure img {
+	border-radius: 0;
 }
 .about-author .title-underblock a {
 	color: #ffa71c;
@@ -408,7 +422,7 @@ h3#reply-title span,
     color: #8d8d8d;
     margin-left: 0;
     font-size: 13px;
-    font-family: "Nunito";
+    /*font-family: "Nunito";*/
     font-weight: 400;
 }
 .comments-list figure.author-avatar {
@@ -417,7 +431,7 @@ h3#reply-title span,
 }
 .comments-list .media-heading {
 	padding-left: 0;
-	font-family: "Nunito";
+	/*font-family: "Nunito";*/
     font-size: 15px;
 }
 .comments-list .media-body,
@@ -425,6 +439,9 @@ h3#reply-title span,
 	color: #1e3046;
 }
 .comments-list .media-body {
+	padding-left: 0;
+}
+.comments-list .media-body .media-body {
 	padding-left: 0;
 	padding-top: 15px;
 }
@@ -444,6 +461,10 @@ h3#reply-title span,
 }
 .widget_search .navbar-form {
 	padding: 0;
+	font-size: 0;
+}
+.author-avatar img {
+	max-width: initial;
 }
 
 /* Other CSS */
@@ -500,8 +521,8 @@ blockquote:after {
 	border: 4px solid #fff;
 	background-color: #f1f1f1;
 	color: #080d0f;
-	padding: 10px 0;
-	font-family: "Nunito";
+	padding: 5px 0;
+	/*font-family: "Nunito";*/
 }
 div#calendar_wrap {
     padding: 5px;
@@ -512,6 +533,44 @@ div#calendar_wrap {
 }
 table#wp-calendar {
     margin-bottom: 0;
+}
+table#wp-calendar #prev,
+table#wp-calendar #next {
+	position: absolute;
+    top: 12px;
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    color: #FFF;
+}
+table#wp-calendar #prev {
+	left: 25%;
+}
+table#wp-calendar #next {
+	right: 25%;
+}
+#wp-calendar #prev:before,
+#wp-calendar #next:before {
+    content: '\f104';
+    display: block;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    position: relative;
+    color: #fff;
+    font-family: 'FontAwesome';
+}
+#wp-calendar #next:before {
+	content: "\f105";
+}
+#wp-calendar #prev > a {
+    top: -8px;
+    position: absolute;
+    color: transparent;
+}
+#wp-calendar tfoot {
+	height: 1px !important;
+    display: block;
 }
 .post .entry-content h1,
 .post .entry-content h2,
@@ -539,4 +598,155 @@ table#wp-calendar {
 }
 .post .entry-content h6 {
 	font-size: 18px;
+}
+.entry-content ul {
+	margin-left: 0;
+	margin-bottom: 10px;
+	list-style: none;
+}
+.entry-content ul ul {
+	margin-left: 10px;
+}
+
+.entry-content ul li:before {
+	content: "•";
+	color: #ffa71c;
+	padding-right: 17px;
+	display: inline-block;
+}
+blockquote p {
+    color: #8d8d8d !important;
+    font-style: italic;
+    font-weight: 300;
+    font-family: "Raleway";
+}
+blockquote:after {
+	display: none;
+}
+.widget_search button {
+	padding: 9px 13px;
+	background-color: #1e3046;
+	border-color: #1e3046;
+}
+.widget_search button:hover {
+	background-color: #ffa71c;
+	border-color: #ffa71c;
+}
+
+/* Categories */
+.widget_categories li,
+.widget_archive li {
+	text-align: right;
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #e1e1e1;
+}
+.widget_categories li:last-child,
+.widget_archive li:last-child {
+	margin-bottom: 0;
+}
+.widget_categories li:after,
+.widget_archive li:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.widget_categories li a,
+.widget_archive li a {
+	float: left;
+}
+.sidebar .widget_categories li a,
+.sidebar .widget_archive li a {
+	line-height: 20px;
+}
+
+.widget_archive,
+.widget_categories {
+	position: relative;
+	overflow: hidden;
+}
+/*.widget_archive:before,
+.widget_categories:before {
+	content: "\f107";
+    font-family: "FontAwesome";
+    font-size: 16px;
+    padding: 6px 13px;
+    background-color: #1e3046;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}*/
+.widget_archive select,
+.widget_categories select {
+	/*width: calc( 100% + 15px );*/
+	position: relative;
+	background-color: transparent;
+	color: #1e3046;
+}
+
+/* Drop Caps */
+.single .entry-content p:first-child:first-letter { 
+	float: left; 
+	font-size: 50px; 
+	line-height: 52px; 
+	padding-right: 8px; 
+}
+.islemag-banner {
+    width: 10000px;
+}
+.islemag-ad-banner-content {
+	padding-right: 0;
+}
+
+.islemag-top-carousel .owl-nav {
+	top: 175px;
+    width: 100%;
+}
+.islemag-top-carousel .owl-nav .owl-prev, 
+.islemag-top-carousel .owl-nav .owl-next {
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	background-color: rgba( 255,255,255,.5 );
+	color: #1e3046;
+	font-size: 40px;
+}
+.islemag-top-carousel .owl-nav .owl-next {
+	float: right;
+	margin-right: 22px;
+}
+.islemag-top-carousel .owl-nav .owl-prev {
+	margin-left: 22px;
+}
+.islemag-top-carousel .owl-nav .owl-prev i {
+	line-height: 40px;
+    padding-top: 4px;
+    padding-right: 4px;
+}
+.islemag-top-carousel .owl-nav .owl-next i {
+	line-height: 40px;
+    padding-top: 4px;
+    padding-left: 4px;
+}
+
+/* Separator */
+.title-bg-line:before {
+	content: "";
+	width: 100%;
+	height: 3px;
+	top: 50%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+	position: absolute;
+	display: block;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,0.95+100 */
+background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.95) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.95) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.95) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#f2ffffff',GradientType=1 ); /* IE6-9 */
+
+
+
 }

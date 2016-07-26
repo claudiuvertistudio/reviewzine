@@ -45,6 +45,11 @@ function reviewzine_scripts() {
 	wp_enqueue_style( 'reviewzine-fontawesome', get_template_directory_uri().'/css/font-awesome.min.css',array(), '4.4.0');
 	wp_enqueue_style( 'reviewzine-style', get_stylesheet_uri() );
 
+	if( is_page_template('template-frontpage.php') ){
+		wp_dequeue_script( 'islemag-script-index' );
+		wp_enqueue_script( 'reviewzine-script-index', get_stylesheet_directory_uri() . '/js/script.index.js', array('jquery'), '1.0.0', true );
+	}
+
 }
 
 add_action( 'wp_enqueue_scripts', 'reviewzine_scripts', 20 );
@@ -148,31 +153,30 @@ function reviewzine_comment($comment, $args, $depth) {
 	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
 	<?php endif; ?>
 
-	<figure class="author-avatar">
-		<?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-	</figure>
-	<div class="comment-author vcard">
-		<?php printf( __( '<h4 class="media-heading">%s</h4>', 'reviewzine' ), get_comment_author_link() ); ?>
-		<div class="reply pull-right reply-link"> <?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?> </div>
-		<div class="comment-extra-info">
-			<?php printf( __( '<span class="comment-date">(%1$s - %2$s)</span>', 'reviewzine' ), get_comment_date(),  get_comment_time() ); ?>
-			<?php edit_comment_link( __( '(Edit)', 'reviewzine' ), '  ', '' ); ?>
+	<div class="media">
+		<div class="media-left">
+			<figure class="author-avatar">
+				<?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, 52, '', '', array('class'=>'media-object') ); ?>
+			</figure>
 		</div>
-		
+		<div class="media-body">
+			<div class="comment-author vcard">
+				<?php printf( __( '<h4 class="media-heading">%s</h4>', 'reviewzine' ), get_comment_author_link() ); ?>
+				<div class="reply pull-right reply-link"> <?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?> </div>
+				<div class="comment-extra-info">
+					<?php printf( __( '<span class="comment-date">(%1$s - %2$s)</span>', 'reviewzine' ), get_comment_date(),  get_comment_time() ); ?>
+					<?php edit_comment_link( __( '(Edit)', 'reviewzine' ), '  ', '' ); ?>
+				</div>
+			</div>
+			<?php if ( $comment->comment_approved == '0' ) : ?>
+				<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'reviewzine' ); ?></em>
+				<br />
+			<?php endif; ?>
+			<div class="media-body">
+				<?php comment_text(); ?>
+			</div>
+		</div>
 	</div>
-
-
-	<?php if ( $comment->comment_approved == '0' ) : ?>
-		<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'reviewzine' ); ?></em>
-		<br />
-	<?php endif; ?>
-
-
-
-	<div class="media-body">
-		<?php comment_text(); ?>
-	</div>
-
 	<?php if ( 'div' != $args['style'] ) : ?>
 	</div>
 	<?php endif; ?>

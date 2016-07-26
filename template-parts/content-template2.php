@@ -20,7 +20,7 @@ if ( $wp_query->have_posts() ) : ?>
     ?>
 
       <div class="col-sm-6">
-        <article class="entry entry-overlay entry-block eb-small <?php echo $colors[$choosed_color];?>">
+        <article class="entry entry-overlay entry-block eb-small">
           <div class="entry-media">
             <a href="<?php echo esc_url( get_category_link( $category[0]->cat_ID ) ); ?>" class="category-block" title="Category <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name ); ?></a>
               <figure>
