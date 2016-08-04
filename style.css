@@ -2,8 +2,8 @@
  Theme Name:   ReviewZine
  Theme URI:    
  Description:  
- Author:       ThemeIsle
- Author URI:   http://themeisle.com/
+ Author:       MachoThemes
+ Author URI:   https://machothemes.com
  Template:     islemag
  Version:      1.0.0
  License:      GNU General Public License v2 or later
@@ -14,17 +14,27 @@
  /* Hover color: #ffa71c; */
 
 body {
-	font-family: "Raleway";
+	font-family: "Lato";
 }
 .sidebar .widget h3 {
-	font-family: "Hind";
-	font-weight: 600;
+	font-family: "Lato";
+	font-weight: bold;
+	font-size: 24px;
 }
 #footer .widget h3 {
-	font-family: "Hind";
-	font-weight: 400;
+	font-family: "Lato";
+	font-weight: 600;
+	font-size: 25px;
+	text-transform: none;
 }
-
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+	font-family: "Lato";
+}
+.main-navigation .current_page_item > a, 
+.main-navigation .current-menu-item > a, 
+.main-navigation .current_page_ancestor > a {
+	color: #ffa71c !important;
+}
  /* Hover */
  #footer.footer-inverse a:hover, 
  #footer.footer-inverse .widget .tweet_time a:hover,
@@ -90,12 +100,22 @@ body {
 .navbar-top .social-icons a {
 	color: #fff;
 	font-weight: normal;
+	font-size: 16px;
+	line-height: 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	display: inline-block;
+}
+.navbar-top .social-icons {
+	line-height: 20px;
 }
 .navbar-top .social-icon:after {
 	display: none;
 }
 .navbar-top .social-icons a {
 	padding-right: 10px;
+	padding-top: 0;
+	padding-bottom: 0;
 }
 .navbar-top .social-icons:last-child a {
 	padding-right: 0;
@@ -176,6 +196,7 @@ div#footer-inner {
 #footer.footer-inverse {
 	color: #fff;
 	font-weight: 400;
+	font-size: 16px;
 }
 
 /* FrontPage Sections */
@@ -215,9 +236,11 @@ div#footer-inner {
 }
 .entry-block .entry-title a {
 	font-size: 18px;
+	font-weight: 400;
 }
 .islemag-top-container .entry-block .entry-title a {
-	font-size: 22px;
+	font-size: 20px;
+	font-weight: 400;
 }
 
 /* Sidebar */
@@ -260,6 +283,24 @@ div#footer-inner {
     padding-right: 10px;
     position: relative;
 }
+.archive .page-header h1 {
+	font-size: 30px;
+}
+.archive .entry-title a {
+	font-size: 22px;
+	font-weight: bold;
+}
+.archive .entry-content {
+	margin-top: 0;
+}
+.archive .entry-content p {
+	color: #5c5c5c;
+}
+.archive .entry-comments,
+.archive .entry-separator,
+.archive .entry-author {
+	font-size: 15px;
+}
 .category .page-header h1 {
 	position: relative;
 }
@@ -283,7 +324,7 @@ div#footer-inner {
 	color: #fff;
 	padding-bottom: 18px;
 	padding-top: 18px;
-	font-size: 25px;
+	font-size: 30px;
 	font-weight: bold;
 }
 .entry-date {
@@ -348,7 +389,8 @@ h3#reply-title,
 	line-height: 30px;
 	padding: 0;
 	font-size: 30px;
-	font-family: "Hind";
+	font-family: "Lato";
+	font-weight: 400;
 }
 h3.blog-related-carousel-title:after,
 h3#reply-title:after,
@@ -364,8 +406,24 @@ h3#reply-title:after,
     left: 0;
     right: 0;
     z-index: 0;
-    margin-top: -1.5px;
     width: 100%;
+}
+h3.blog-related-carousel-title:before,
+h3#reply-title:before,
+#comments .comments-title:before {
+    content: "";
+    width: 100%;
+    height: 3px;
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    position: absolute;
+    display: block;
+    background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.95) 100%);
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.95) 100%);
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.95) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#f2ffffff',GradientType=1 );
 }
 h3.blog-related-carousel-title span,
 h3#reply-title span,
@@ -404,10 +462,10 @@ h3#reply-title span,
 .about-author .title-underblock span {
 	margin-left: 10px;
     padding-left: 10px;
-    border-left: 1px solid #080d0f;
+    border-left: 1px solid #5c5c5c;
     line-height: 18px;
     display: inline-block;
-    color: #080d0f;
+    color: #5c5c5c;
 }
 .comment-form input[type="submit"].btn {
 	background-color: #ffa71c;
@@ -533,11 +591,12 @@ div#calendar_wrap {
 }
 table#wp-calendar {
     margin-bottom: 0;
+    position: relative;
 }
 table#wp-calendar #prev,
 table#wp-calendar #next {
 	position: absolute;
-    top: 12px;
+    top: 5px;
     width: 35px;
     height: 35px;
     background-color: transparent;
@@ -617,6 +676,9 @@ table#wp-calendar #next {
 	padding-right: 17px;
 	display: inline-block;
 }
+.entry-content .review-wrap-up ul li:before {
+	display: none;
+}
 blockquote p {
     color: #8d8d8d !important;
     font-style: italic;
@@ -675,8 +737,12 @@ blockquote:after {
 .sidebar .widget_categories li a,
 .sidebar .widget_archive li a {
 	line-height: 20px;
+	font-size: 15px;
 }
-
+.sidebar .widget li a,
+.sidebar .widget a {
+	font-size: 15px;
+}
 .widget_archive,
 .widget_categories {
 	position: relative;
@@ -766,4 +832,60 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 
 
+}
+.navbar-top .navbar-btn {
+	margin-right: 15px;
+}
+.navbar-top .navbar-btn:focus {
+	box-shadow: none;
+}
+.islemag-top-container .entry-title {
+	padding-right: 15px;
+}
+.entry-overlay-meta .entry-overlay-date,
+.entry-overlay-meta .entry-comments,
+.entry-overlay-meta .entry-separator,
+.entry-overlay-meta .entry-author {
+	font-size: 15px;
+	font-weight: 400;
+}
+.islemag-section1 h2,
+.islemag-section3 h2,
+.islemag-section4 h2,
+.islemag-section5 h2,
+.islemag-section2 h2 {
+	font-size: 30px;
+	font-weight: bold;
+}
+.islemag-section1 .entry-overlay-date,
+.islemag-section1 .entry-comments,
+.islemag-section1 .entry-separator,
+.islemag-section1 .entry-author {
+	color: #8d8d8d;
+}
+.entry-date {
+	width: 12.5%;
+}
+.entry {
+	padding-left: 17%;
+}
+.entry.single .entry-title {
+	font-size: 26px;
+	font-weight: bold;
+}
+.post .entry-content p {
+	color: #5c5c5c;
+	font-size: 15px;
+}
+.about-author h3,
+.about-author .author-content,
+.comments-list .media-body .media-body {
+	color: #5c5c5c;
+}
+.about-author .author-content {
+	font-size: 15px;
+}
+.comments-list .media-heading a {
+	font-size: 16px;
+	color: #1e3046;
 }

@@ -58,8 +58,6 @@ if ( $wp_query->have_posts() ) : ?>
                     <span class="entry-overlay-date"><i class="fa fa-calendar-o"></i><?php echo get_the_date( 'j F Y' ); ?></span>
                     <span class="entry-separator">|</span>
                     <a href="<?php the_permalink(); ?>" class="entry-comments"><i class="fa fa-comment-o"></i><?php comments_number( '0', '1', '%' ); ?></a>
-                    <span class="entry-separator">|</span>
-                    <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="entry-author"><i class="fa fa-user"></i><?php the_author(); ?></a>
                 </div>
                 <?php
                 if( function_exists ( 'cwppos_calc_overall_rating' ) ){
@@ -145,7 +143,7 @@ if ( $wp_query->have_posts() ) : ?>
             <div class="entry-meta">
                 <span class="entry-overlay-date"><i class="fa fa-calendar-o"></i><?php echo get_the_date( 'j F Y' ); ?></span>
                 <span class="entry-separator">|<span>
-                <a href="<?php the_permalink(); ?>" class="entry-comments"><i class="fa fa-comment-o"></i><?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?></a>
+                <a href="<?php the_permalink(); ?>" class="entry-comments"><i class="fa fa-comment-o"></i><?php comments_number( '0', '1', '%' ); ?></a>
             </div> <!-- End .entry-meta -->
 
           </article> <!-- End .entry-overlay -->
@@ -207,8 +205,8 @@ if ( $wp_query->have_posts() ) : ?>
           <?php } } ?>
           <div class="entry-meta">
             <span class="entry-overlay-date"><i class="fa fa-calendar-o"></i><?php echo get_the_date( 'j M' ); ?></span>
-            <span class="entry-separator">|<span>
-            <a href="<?php the_permalink(); ?>" class="entry-comments"><i class="fa fa-comment-o"></i><?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?></a>
+            <span class="entry-separator">|</span>
+            <a href="<?php the_permalink(); ?>" class="entry-comments"><i class="fa fa-comment-o"></i><?php comments_number( '0', '1', '% ' ); ?></a>
           </div> <!-- End .entry-meta -->
         </article> <!-- End .entry-overlay -->
       </div><!-- End .col-sm-6 -->
@@ -268,8 +266,8 @@ if ( $wp_query->have_posts() ) : ?>
           <?php } } ?>
           <div class="entry-meta">
             <span class="entry-overlay-date"><i class="fa fa-calendar-o"></i><?php echo get_the_date( 'j M' ); ?></span>
-            <span class="entry-separator">|<span>
-            <a href="<?php the_permalink(); ?>" class="entry-comments"><i class="fa fa-comment-o"></i><?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?></a>
+            <span class="entry-separator">|</span>
+            <a href="<?php the_permalink(); ?>" class="entry-comments"><i class="fa fa-comment-o"></i><?php comments_number( '0', '1', '%' ); ?></a>
           </div> <!-- End .entry-meta -->
         </article> <!-- End .entry-overlay -->
         <?php

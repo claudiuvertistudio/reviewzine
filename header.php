@@ -26,36 +26,38 @@
         <header id="header" class="site-header" role="banner">
             <div class="navbar-top">
                 <div class="container">
-                    <div class="navbar-left social-icons">
-                        <?php
-                            $islemag_social_icons = get_theme_mod('islemag_social_icons');
+                    <div class="row">
+                        <div class="navbar-left social-icons">
+                            <?php
+                                $islemag_social_icons = get_theme_mod('islemag_social_icons');
 
-                            if( !empty( $islemag_social_icons ) ){
-                                $islemag_social_icons_decode = json_decode( $islemag_social_icons );
-                                if( !empty( $islemag_social_icons_decode ) ){
-                                    foreach( $islemag_social_icons_decode as $icon ){
-                                        if( !empty( $icon->icon_value ) )
-                                        echo '<a '.( empty( $icon->link ) ? '' : 'href="'. esc_url( $icon->link ).'"' ).' class="social-icon"><i class="fa '.esc_attr( $icon->icon_value ).'"></i></a>';
+                                if( !empty( $islemag_social_icons ) ){
+                                    $islemag_social_icons_decode = json_decode( $islemag_social_icons );
+                                    if( !empty( $islemag_social_icons_decode ) ){
+                                        foreach( $islemag_social_icons_decode as $icon ){
+                                            if( !empty( $icon->icon_value ) )
+                                            echo '<a '.( empty( $icon->link ) ? '' : 'href="'. esc_url( $icon->link ).'"' ).' class="social-icon"><i class="fa '.esc_attr( $icon->icon_value ).'"></i></a>';
+                                        }
                                     }
                                 }
-                            }
-                        ?>
-                    </div>
+                            ?>
+                        </div>
 
-                    <button type="button" class="navbar-btn"><i class="fa fa-search"></i></button>
+                        <button type="button" class="navbar-btn"><i class="fa fa-search"></i></button>
 
-                    <div class="navbar-right">
-                      <div class="navbar">
-                				<nav id="top-navigation" class="navigation top-navigation" role="navigation">
-                					<button class="menu-toggle"><?php _e( 'Menu', 'reviewzine' ); ?></button>
-                					<a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'reviewzine' ); ?>"><?php _e( 'Skip to content', 'reviewzine' ); ?></a>
-                					<?php wp_nav_menu( array( 'theme_location' => 'islemag-header', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu', 'depth' => 1 ) ); ?>
-                				</nav><!-- #site-navigation -->
-                			</div><!-- #navbar -->
+                        <div class="navbar-right">
+                          <div class="navbar">
+                    				<nav id="top-navigation" class="navigation top-navigation" role="navigation">
+                    					<button class="menu-toggle"><?php _e( 'Menu', 'reviewzine' ); ?></button>
+                    					<a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'reviewzine' ); ?>"><?php _e( 'Skip to content', 'reviewzine' ); ?></a>
+                    					<?php wp_nav_menu( array( 'theme_location' => 'islemag-header', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu', 'depth' => 1 ) ); ?>
+                    				</nav><!-- #site-navigation -->
+                    			</div><!-- #navbar -->
+                        </div>
+                        <div class="navbar-white top" id="header-search-form">
+                          <?php get_search_form(); ?>
+                        </div><!-- End #header-search-form -->
                     </div>
-                    <div class="navbar-white top" id="header-search-form">
-                      <?php get_search_form(); ?>
-                    </div><!-- End #header-search-form -->
                 </div>
             </div>
 

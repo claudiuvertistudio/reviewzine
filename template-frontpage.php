@@ -40,7 +40,7 @@ wp_reset_postdata(); ?>
 	<div class="container">
 		<div class="row">
 
-			<div class="islemag-content-left col-md-9">
+			<div class="islemag-content-left col-md-8">
 				<?php 
     
     			/* ---------Section 1--------- */

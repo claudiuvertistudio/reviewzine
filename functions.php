@@ -7,13 +7,13 @@ function reviewzine_fonts_url() {
 	* supported by Lora, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$raleway = _x( 'on','Raleway font: on or off','reviewzine' );
+	$lato = _x( 'on','Lato font: on or off','reviewzine' );
 	$hind = _x( 'on','Hind font: on or off', 'reviewzine' );
 
-	if( 'off' !== $raleway || 'off' !== $hind ){
+	if( 'off' !== $lato || 'off' !== $hind ){
 		$font_families = array();
-		if( 'off' !== $raleway ){
-			$font_families[] = 'Raleway:400,500,600,700';
+		if( 'off' !== $lato ){
+			$font_families[] = 'Lato:400,500,600,700';
 		}
 		if( 'off' !== $hind ){
 			$font_families[] = 'Hind:400,600,700';
@@ -96,7 +96,7 @@ function reviewzine_style() {
 
 	$islemag_sidebar_textcolor = esc_attr( get_theme_mod( 'header_textcolor','#454545' ) );
 	if( !empty( $islemag_sidebar_textcolor ) ){
-		echo '.sidebar .widget li a, .islemag-content-right, .islemag-content-right a, .post .entry-content, .post .entry-content p,
+		echo '.sidebar .widget li a, .islemag-content-right, .islemag-content-right a, .post .entry-content,
 		 .post .entry-cats, .post .entry-cats a, .post .entry-comments', '.post .entry-separator, .post .entry-footer a,
 		 .post .entry-footer span, .post .entry-footer .entry-cats, .post .entry-footer .entry-cats a, .author-content { color: '.$islemag_sidebar_textcolor.'}';
 	}
@@ -120,7 +120,7 @@ function reviewzine_style() {
 
 
 
-	$islemag_sections_post_text_color = esc_attr( get_theme_mod( 'islemag_sections_post_text_color','#1e3046' ) );
+	$islemag_sections_post_text_color = esc_attr( get_theme_mod( 'islemag_sections_post_text_color','#8d8d8d' ) );
 	if( !empty($islemag_sections_post_text_color) ){
 		echo '.islemag-content-left .entry-meta, .islemag-content-left .blog-related-carousel .entry-content p,
 		.islemag-content-left .blog-related-carousel .entry-cats .entry-label, .islemag-content-left .blog-related-carousel .entry-cats a,
@@ -136,7 +136,7 @@ function reviewzine_style() {
 // Change customizer colors
 function reviewzine_customize_register( $wp_customize ) {
 
-	$wp_customize->get_setting( 'islemag_sections_post_text_color' )->default = '#1e3046';
+	$wp_customize->get_setting( 'islemag_sections_post_text_color' )->default = '#8d8d8d';
 	$wp_customize->get_setting( 'islemag_sections_post_title_color' )->default = '#1e3046';
 	$wp_customize->get_setting( 'islemag_title_color' )->default = '#1e3046';
 
@@ -191,4 +191,124 @@ function reviewzine_comment($comment, $args, $depth) {
 	</div>
 	<?php endif; ?>
 <?php
+}
+
+
+require_once get_stylesheet_directory() . '/class-tgm-plugin-activation.php';
+
+add_action( 'tgmpa_register', 'reviewzine_register_required_plugins' );
+
+function reviewzine_register_required_plugins() {
+	/*
+	 * Array of plugin arrays. Required keys are name and slug.
+	 * If the source is NOT from the .org repo, then source is also required.
+	 */
+	$plugins = array(
+
+		array(
+			'name'      => 'WP Product Review',
+			'slug'      => 'wp-product-review',
+			'required'  => false,
+		),
+
+	);
+
+	/*
+	 * Array of configuration settings. Amend each line as needed.
+	 *
+	 * TGMPA will start providing localized text strings soon. If you already have translations of our standard
+	 * strings available, please help us make TGMPA even better by giving us access to these translations or by
+	 * sending in a pull-request with .po file(s) with the translations.
+	 *
+	 * Only uncomment the strings in the config array if you want to customize the strings.
+	 */
+	$config = array(
+		'id'           => 'reviewzine-tgmpa',       // Unique ID for hashing notices for multiple instances of TGMPA.
+		'default_path' => '',                       // Default absolute path to bundled plugins.
+		'menu'         => 'tgmpa-install-plugins',  // Menu slug.
+		'has_notices'  => true,                     // Show admin notices or not.
+		'dismissable'  => true,                     // If false, a user cannot dismiss the nag message.
+		'dismiss_msg'  => '',                       // If 'dismissable' is false, this message will be output at top of nag.
+		'is_automatic' => false,                    // Automatically activate plugins after installation or not.
+		'message'      => '',                       // Message to output right before the plugins table.
+
+		/*
+		'strings'      => array(
+			'page_title'                      => __( 'Install Required Plugins', 'reviewzine' ),
+			'menu_title'                      => __( 'Install Plugins', 'reviewzine' ),
+			/* translators: %s: plugin name. * /
+			'installing'                      => __( 'Installing Plugin: %s', 'reviewzine' ),
+			/* translators: %s: plugin name. * /
+			'updating'                        => __( 'Updating Plugin: %s', 'reviewzine' ),
+			'oops'                            => __( 'Something went wrong with the plugin API.', 'reviewzine' ),
+			'notice_can_install_required'     => _n_noop(
+				/* translators: 1: plugin name(s). * /
+				'This theme requires the following plugin: %1$s.',
+				'This theme requires the following plugins: %1$s.',
+				'reviewzine'
+			),
+			'notice_can_install_recommended'  => _n_noop(
+				/* translators: 1: plugin name(s). * /
+				'This theme recommends the following plugin: %1$s.',
+				'This theme recommends the following plugins: %1$s.',
+				'reviewzine'
+			),
+			'notice_ask_to_update'            => _n_noop(
+				/* translators: 1: plugin name(s). * /
+				'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.',
+				'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.',
+				'reviewzine'
+			),
+			'notice_ask_to_update_maybe'      => _n_noop(
+				/* translators: 1: plugin name(s). * /
+				'There is an update available for: %1$s.',
+				'There are updates available for the following plugins: %1$s.',
+				'reviewzine'
+			),
+			'notice_can_activate_required'    => _n_noop(
+				/* translators: 1: plugin name(s). * /
+				'The following required plugin is currently inactive: %1$s.',
+				'The following required plugins are currently inactive: %1$s.',
+				'reviewzine'
+			),
+			'notice_can_activate_recommended' => _n_noop(
+				/* translators: 1: plugin name(s). * /
+				'The following recommended plugin is currently inactive: %1$s.',
+				'The following recommended plugins are currently inactive: %1$s.',
+				'reviewzine'
+			),
+			'install_link'                    => _n_noop(
+				'Begin installing plugin',
+				'Begin installing plugins',
+				'reviewzine'
+			),
+			'update_link' 					  => _n_noop(
+				'Begin updating plugin',
+				'Begin updating plugins',
+				'reviewzine'
+			),
+			'activate_link'                   => _n_noop(
+				'Begin activating plugin',
+				'Begin activating plugins',
+				'reviewzine'
+			),
+			'return'                          => __( 'Return to Required Plugins Installer', 'reviewzine' ),
+			'plugin_activated'                => __( 'Plugin activated successfully.', 'reviewzine' ),
+			'activated_successfully'          => __( 'The following plugin was activated successfully:', 'reviewzine' ),
+			/* translators: 1: plugin name. * /
+			'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'reviewzine' ),
+			/* translators: 1: plugin name. * /
+			'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'reviewzine' ),
+			/* translators: 1: dashboard link. * /
+			'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'reviewzine' ),
+			'dismiss'                         => __( 'Dismiss this notice', 'reviewzine' ),
+			'notice_cannot_install_activate'  => __( 'There are one or more required or recommended plugins to install, update or activate.', 'reviewzine' ),
+			'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'reviewzine' ),
+
+			'nag_type'                        => '', // Determines admin notice type - can only be one of the typical WP notice classes, such as 'updated', 'update-nag', 'notice-warning', 'notice-info' or 'error'. Some of which may not work as expected in older WP versions.
+		),
+		*/
+	);
+
+	tgmpa( $plugins, $config );
 }
