@@ -7,13 +7,13 @@ function reviewzine_fonts_url() {
 	* supported by Lora, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$raleway = _x( 'on','Raleway font: on or off','reviewzine' );
+	$lato = _x( 'on','Lato font: on or off','reviewzine' );
 	$hind = _x( 'on','Hind font: on or off', 'reviewzine' );
 
-	if( 'off' !== $raleway || 'off' !== $hind ){
+	if( 'off' !== $lato || 'off' !== $hind ){
 		$font_families = array();
-		if( 'off' !== $raleway ){
-			$font_families[] = 'Raleway:400,500,600,700';
+		if( 'off' !== $lato ){
+			$font_families[] = 'Lato:400,500,600,700';
 		}
 		if( 'off' !== $hind ){
 			$font_families[] = 'Hind:400,600,700';
@@ -96,7 +96,7 @@ function reviewzine_style() {
 
 	$islemag_sidebar_textcolor = esc_attr( get_theme_mod( 'header_textcolor','#454545' ) );
 	if( !empty( $islemag_sidebar_textcolor ) ){
-		echo '.sidebar .widget li a, .islemag-content-right, .islemag-content-right a, .post .entry-content, .post .entry-content p,
+		echo '.sidebar .widget li a, .islemag-content-right, .islemag-content-right a, .post .entry-content,
 		 .post .entry-cats, .post .entry-cats a, .post .entry-comments', '.post .entry-separator, .post .entry-footer a,
 		 .post .entry-footer span, .post .entry-footer .entry-cats, .post .entry-footer .entry-cats a, .author-content { color: '.$islemag_sidebar_textcolor.'}';
 	}
@@ -120,7 +120,7 @@ function reviewzine_style() {
 
 
 
-	$islemag_sections_post_text_color = esc_attr( get_theme_mod( 'islemag_sections_post_text_color','#1e3046' ) );
+	$islemag_sections_post_text_color = esc_attr( get_theme_mod( 'islemag_sections_post_text_color','#8d8d8d' ) );
 	if( !empty($islemag_sections_post_text_color) ){
 		echo '.islemag-content-left .entry-meta, .islemag-content-left .blog-related-carousel .entry-content p,
 		.islemag-content-left .blog-related-carousel .entry-cats .entry-label, .islemag-content-left .blog-related-carousel .entry-cats a,
@@ -136,7 +136,7 @@ function reviewzine_style() {
 // Change customizer colors
 function reviewzine_customize_register( $wp_customize ) {
 
-	$wp_customize->get_setting( 'islemag_sections_post_text_color' )->default = '#1e3046';
+	$wp_customize->get_setting( 'islemag_sections_post_text_color' )->default = '#8d8d8d';
 	$wp_customize->get_setting( 'islemag_sections_post_title_color' )->default = '#1e3046';
 	$wp_customize->get_setting( 'islemag_title_color' )->default = '#1e3046';
 
