@@ -94,7 +94,7 @@ function reviewzine_style() {
 		echo '.page-header h1 { color: '. $islemag_title_color .' }';
 	}
 
-	$islemag_sidebar_textcolor = esc_attr( get_theme_mod( 'header_textcolor','#454545' ) );
+	$islemag_sidebar_textcolor = esc_attr( get_theme_mod( 'header_textcolor','#1e3046' ) );
 	if( !empty( $islemag_sidebar_textcolor ) ){
 		echo '.sidebar .widget li a, .islemag-content-right, .islemag-content-right a, .post .entry-content,
 		 .post .entry-cats, .post .entry-cats a, .post .entry-comments', '.post .entry-separator, .post .entry-footer a,
