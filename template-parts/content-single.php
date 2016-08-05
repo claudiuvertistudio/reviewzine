@@ -87,6 +87,32 @@
                   		?>
                   </div><!-- End .entry-content -->
 
+                  <footer class="entry-footer clearfix">
+                    <?php
+                      $category = get_the_category(); ?>
+                      <span class="entry-cats">
+                          <span class="entry-label">
+                              <i class="fa fa-tag"></i> <?php esc_html_e( 'Categories:','reviewzine' ); ?>
+                          </span>
+                          <?php
+                              if(!empty($category)){
+                                  $i = 0;
+                                  $len = count($category);
+                                  foreach($category as $cat){
+                                      echo '<a href="'. esc_url( get_category_link( $cat->cat_ID ) ).'">' . esc_attr( $cat->cat_name ) . '</a>';
+                                      if ($i != $len - 1) {
+                                         echo ', ';
+                                      }
+                                      $i++;
+                                  }
+                              } ?>
+                      </span><!-- End .entry-tags -->
+                      <span class="entry-separator">|</span>
+                      <a href="#" class="entry-comments"><i class="fa fa-comment-o"></i> <?php comments_number( esc_html__('0','reviewzine'), esc_html__('1','reviewzine'), esc_html__('%','reviewzine') ); ?></a>
+                      <span class="entry-separator">|</span>
+                      <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="entry-author"><i class="fa fa-user"></i> <?php the_author(); ?></a>
+                    </footer>
+
                   <?php $islemag_single_post_hide_author = get_theme_mod( 'islemag_single_post_hide_author' ); ?>
                   <div class="about-author clearfix <?php if ( $islemag_single_post_hide_author == true ) echo 'islemag_hide'; ?>">
                       <?php
