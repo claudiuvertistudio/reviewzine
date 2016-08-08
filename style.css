@@ -598,6 +598,7 @@ div#calendar_wrap {
 }
 #wp-calendar tbody td a {
 	color: #ffa71c;
+	margin-bottom: 0;
 }
 table#wp-calendar {
     margin-bottom: 0;

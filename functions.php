@@ -115,7 +115,7 @@ function reviewzine_style() {
 
 	$islemag_sections_post_title_color = esc_attr( get_theme_mod( 'islemag_sections_post_title_color','#1e3046' ) );
 	if( !empty($islemag_sections_post_title_color) ){
-		echo '.home.blog .islemag-content-left .entry-title a, .blog-related-carousel .entry-title a { color: '. $islemag_sections_post_title_color .' }';
+		echo '.home.blog .islemag-content-left .entry-title a, .blog-related-carousel .entry-title a, .entry-block .entry-title a { color: '. $islemag_sections_post_title_color .' }';
 	}
 
 
