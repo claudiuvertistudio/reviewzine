@@ -36,6 +36,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 	color: #ffa71c !important;
 }
  /* Hover */
+  .sidebar .widget li:hover > ul a {
+ 	color: #1e3046;
+ }
+  .sidebar .widget li:hover > ul > li:hover a {
+ 	color: #ffa71c;
+ } 
  #footer.footer-inverse a:hover, 
  #footer.footer-inverse .widget .tweet_time a:hover,
  .main-navigation .current_page_item > a, 
@@ -45,9 +51,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
  ul > li:hover > a, 
  .top-navigation ul > li:hover > a, 
  .main-navigation ul > li:hover > a, 
- .sidebar .widget li:hover a {
+ .sidebar .widget li:hover > a {
  	color: #ffa71c;
  }
+
  a {
  	color: #ffa71c;
  }
@@ -591,6 +598,7 @@ div#calendar_wrap {
 }
 #wp-calendar tbody td a {
 	color: #ffa71c;
+	margin-bottom: 0;
 }
 table#wp-calendar {
     margin-bottom: 0;
@@ -764,8 +772,15 @@ blockquote:after {
 	display: block;
 }
 .sidebar .widget_categories li a, 
-.sidebar .widget_archive li a {
+.sidebar .widget_archive li a,
+.sidebar .widget_recent_entries li a {
 	margin-bottom: 0;
+}
+.sidebar .widget_recent_entries li {
+	padding-bottom: 20px;
+}
+.sidebar .widget_recent_entries li .post-date {
+	color: #8d8d8d;
 }
 .widget_archive,
 .widget_categories {
@@ -1029,6 +1044,24 @@ div.affiliate-button a {
 	font-weight: bold;
 }
 
+.widget ul > li > ul {
+	margin-left: 0;
+	padding-left: 1em;
+}
+.widget.widget_categories ul > li > ul {
+	margin-top: 15px;
+    border-top: 1px solid #e1e1e1;
+    padding-top: 15px;
+}
+.widget ul > li > ul > li:last-child {
+	padding-bottom: 0;
+}
+
+.rev-option ul li,
+#review-statistics .review-wrap-up .review-wu-right ul li {
+	padding-bottom: 0;
+}
+
 /* Responsive */
 
 @media (max-width: 767px) {
@@ -1042,5 +1075,16 @@ div.affiliate-button a {
 	}
 	.entry {
 		padding-left: 0;
+	}
+	.islemag-banner {
+	    display: none;
+	}
+}
+@media (max-width: 600px) { 
+	.islemag-top-carousel .entry-media figure {
+		height: auto;
+	}
+	.islemag-top-carousel .owl-nav {
+		display: none;
 	}
 }
