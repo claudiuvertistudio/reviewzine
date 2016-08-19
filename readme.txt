@@ -1,7 +1,7 @@
 === ReviewZine ===
 
 Contributors: themeisle
-Tags: gray, green, white, light, responsive-layout, two-columns, three-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: two-columns, right-sidebar, rtl-language-support,sticky-post,theme-options, custom-background, custom-menu, featured-images, threaded-comments, translation-ready
 
 Requires at least: 4.0
 Tested up to: 4.4
