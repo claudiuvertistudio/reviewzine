@@ -680,7 +680,7 @@ table#wp-calendar #next {
     margin-left: 16px;
 }
 
-.entry-content ul li:before {
+.entry-content ul > li:before {
 	content: "•";
 	color: #ffa71c;
 	padding-right: 17px;
