@@ -827,6 +827,21 @@ blockquote:after {
 	line-height: 52px; 
 	padding-right: 8px; 
 }
+.dropcap:first-letter,
+.dropcap-bg:first-letter {
+    font-size: 3.8em;
+    line-height: 1;
+    padding-right: 0.2em;
+    float: left;
+    text-transform: uppercase;
+    color: #505050;
+}
+.dropcap,
+.dropcap-bg{
+    font-size: 15px;
+    line-height: 22px;
+    text-transform: none;
+}
 .islemag-banner {
     width: 10000px;
 }
