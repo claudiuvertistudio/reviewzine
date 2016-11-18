@@ -1049,6 +1049,10 @@ div.affiliate-button a {
 	border-radius: 4px;
 }
 
+.pirate_forms_wrap .form_field_wrap {
+    margin-bottom: 10px;
+}
+
 .widget ul > li > ul {
 	margin-left: 0;
 	padding-left: 1em;
