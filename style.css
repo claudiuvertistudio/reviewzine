@@ -1043,6 +1043,12 @@ div.affiliate-button a {
 	font-weight: bold;
 }
 
+.entry-content .form_field_wrap input {
+	border: 1px solid #eaeaea;
+	background: none;
+	border-radius: 4px;
+}
+
 .widget ul > li > ul {
 	margin-left: 0;
 	padding-left: 1em;
