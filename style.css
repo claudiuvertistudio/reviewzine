@@ -539,6 +539,9 @@ h3#reply-title span,
 	text-align: right;
 	padding-right: 15px;
 }
+.islemag-ad-banner-content > a {
+    text-align: center;
+}
 blockquote {
 	border-left-color: #ffa71c;
 }
