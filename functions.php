@@ -297,14 +297,14 @@ function reviewzine_navbar_top_classes( $classes ){
 	}
 	return '';
 }
-add_filter('navbar_top_classes', 'reviewzine_navbar_top_classes');
+add_filter('islemag_navbar_top_classes', 'reviewzine_navbar_top_classes');
 
 function reviewzine_no_class_filter(){
 	return '';
 }
-add_filter('wrapper_class', 'reviewzine_no_class_filter');
-add_filter('content_ids', 'reviewzine_no_class_filter');
-add_filter('line_color','reviewzine_no_class_filter');
+add_filter('islemag_wrapper_class', 'reviewzine_no_class_filter');
+add_filter('islemag_content_ids', 'reviewzine_no_class_filter');
+add_filter('islemag_line_color','reviewzine_no_class_filter');
 
 function reviewzine_container(){ ?>
 	<div class="container">
@@ -365,7 +365,7 @@ function reviewzine_archive_content_classes($classes){
 	}
 	return '';
 }
-add_filter('archive_content_classes','reviewzine_archive_content_classes',9);
+add_filter('islemag_archive_content_classes','reviewzine_archive_content_classes',9);
 
 function reviewzine_content_classes($classes){
 	if( is_array( $classes ) ){
@@ -374,7 +374,7 @@ function reviewzine_content_classes($classes){
 	}
 	return '';
 }
-add_filter('content_classes','reviewzine_content_classes');
+add_filter('islemag_content_classes','reviewzine_content_classes');
 
 
 function reviewzine_comments_title(){
@@ -385,7 +385,8 @@ function reviewzine_comments_title(){
 add_action('islemag_comments_title','reviewzine_comments_title',9);
 
 
-function reviewzine_comment_content(){ ?>
+function reviewzine_comment_content($args, $comment, $depth, $add_below){
+	remove_action('islemag_comment_content','islemag_comment_action'); ?>
 	<div class="media">
 		<div class="media-left">
 			<figure class="author-avatar">
@@ -414,7 +415,7 @@ function reviewzine_comment_content(){ ?>
 	</div>
 	<?php
 }
-add_action('reviewzine_comment_content','reviewzine_comment_content',9);
+add_action('islemag_comment_content','reviewzine_comment_content', 9, 5);
 
 function reviewzine_comments_args($args){
 	if(is_array($args)){
@@ -424,7 +425,7 @@ function reviewzine_comments_args($args){
 	}
 	return '';
 }
-add_filter('comments_args','reviewzine_comments_args');
+add_filter('islemag_comments_args','reviewzine_comments_args');
 
 function islemag_sidebar_classes($classes){
 	if( is_array( $classes ) ){
@@ -433,7 +434,7 @@ function islemag_sidebar_classes($classes){
 	}
 	return '';
 }
-add_filter('sidebar_classes','islemag_sidebar_classes');
+add_filter('islemag_sidebar_classes','islemag_sidebar_classes');
 
 function reviewzine_entry_footer(){
 	remove_action('islemag_entry_footer','islemag_entry_footer');
@@ -443,11 +444,11 @@ add_action('islemag_entry_footer','reviewzine_entry_footer',9);
 function reviewzine_date_format(){
 	return 'F';
 }
-add_filter('date_format','reviewzine_date_format');
+add_filter('islemag_date_format','reviewzine_date_format');
 
 function reviewzine_entry_date(){
 	remove_action('islemag_entry_date','islemag_post_entry_date');
-	$date_format = apply_filters('date_format','F'); ?>
+	$date_format = apply_filters('islemag_date_format','F'); ?>
 	<div class="entry-date"><div><?php echo get_the_date( 'd' ); ?><span><?php echo strtoupper(get_the_date( $date_format )); ?></span></div></div>
 	<?php
 }
