@@ -15,6 +15,7 @@
 body {
 	font-family: "Lato";
 }
+
 .sidebar .widget h3 {
 	font-family: "Lato";
 	font-weight: bold;
@@ -100,6 +101,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 .navbar-top .container {
 	position: relative;
 }
+
+
 .top-navigation ul li a,
 .navbar-btn,
 .navbar-top .social-icons a i, 
@@ -129,11 +132,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 
 /* Navigation */
 div#navbar {
-    border-bottom: 1px solid #e1e1e1;
-    border-top: 1px solid #e1e1e1;
-    margin-bottom: 30px;
-    width: 100%;
+	border: 0;
+	margin: 0;
 }
+
 .main-navigation {
 	border: 0 none;
 }
@@ -332,6 +334,9 @@ div#footer-inner {
 	padding-top: 18px;
 	font-size: 30px;
 	font-weight: bold;
+}
+.entry-format{
+	background-color: #ffa71c;
 }
 .entry-date {
 	padding-top: 0;
@@ -933,7 +938,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 .islemag-section1 .entry-author {
 	color: #8d8d8d;
 }
-.entry-date {
+.entry-date, .entry-format {
 	width: 12.5%;
 }
 .entry {
