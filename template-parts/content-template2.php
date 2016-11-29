@@ -1,4 +1,10 @@
 <?php
+/**
+ * Second template
+ *
+ * @package reviewzine
+ */
+
 $wp_query = new WP_Query(
 	array(
 		  'posts_per_page' => $islemag_section_max_posts,

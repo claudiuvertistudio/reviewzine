@@ -108,7 +108,7 @@
 							} ?>
 					  </span><!-- End .entry-tags -->
 					  <span class="entry-separator">|</span>
-					  <a href="#" class="entry-comments"><i class="fa fa-comment-o"></i> <?php comments_number( esc_html__( '0','reviewzine' ), esc_html__( '1','reviewzine' ), esc_html__( '%','reviewzine' ) ); ?></a>
+					  <a href="#" class="entry-comments"><i class="fa fa-comment-o"></i> <?php comments_number( '0', '1', '%' ); ?></a>
 					  <span class="entry-separator">|</span>
 					  <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="entry-author"><i class="fa fa-user"></i> <?php the_author(); ?></a>
 					</footer>
