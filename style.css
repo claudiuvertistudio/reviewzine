@@ -227,6 +227,7 @@ div#footer-inner {
 
 .star-ratings-css {
 	width: auto;
+	text-shadow: none;
 }
 .star-ratings-css .star-ratings-css-top {
 	height: 14px;
